@@ -8,19 +8,18 @@
 <h2>Here are some links to help you start: </h2>
 <ul>
   <div class="dropdown">
-    <button class="dropbtn">makes</button>
+    <button class="dropbtn">{{selectedCar}}</button>
     <div class="dropdown-content">
-      <a href="#" (click)="ford()">Ford</a>
-      <a href="#" (click)="acura()">Acura</a>
+      <a (click)="ford()">Ford</a>
+      <a (click)="acura()">Acura</a>
     </div>
   </div>
 
   <div class="dropdown">
     <button class="dropbtn">models</button>
     <div class="dropdown-content">
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
+      <a *ngFor="let modelname of vehicalModels">{{modelname}}</a>
+      <!-- <a>{{vehicalModels[1]}}</a> -->
     </div>
   </div>
 </ul>
