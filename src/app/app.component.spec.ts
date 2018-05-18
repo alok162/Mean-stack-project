@@ -1,11 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClient, HttpHeaders, HttpHandler } from '@angular/common/http';
+
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
+      providers: [HttpClient, HttpHandler],
     }).compileComponents();
   }));
   it('should create the app', async(() => {

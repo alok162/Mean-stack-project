@@ -30,22 +30,22 @@ const connection = (closure) => {
         res.status(501).json(response);
     }
 
-    router.get('/ford', (req, res) => {
+    router.get('/car', (req, res) => {
         connection((db) => {
             console.log('data', db);
-            db.collection('vehical').find({"car" : "Ford"}).toArray().then((vehical) => {
+            db.collection('vehical').find().toArray().then((vehical) => {
                 response.data = vehical;
                 res.json(response);
             })
         })
     })
 
-    router.get('/acura', (req, res) => {
-        connection((db) => {
-            db.collection('vehical').find({"car" : "Acura"}).toArray().then((vehical) => {
-                response.data = vehical;
-                res.json(response);
-            })
-        })
-    })
+    // router.get('/acura', (req, res) => {
+    //     connection((db) => {
+    //         db.collection('vehical').find({"car" : "Acura"}).toArray().then((vehical) => {
+    //             response.data = vehical;
+    //             res.json(response);
+    //         })
+    //     })
+    // })
     module.exports = router;
